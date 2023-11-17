@@ -6,7 +6,7 @@ resource "aws_instance" "terraformdemo" {
   ami                    = var.ami_id
   instance_type          = var.instance_type
   key_name               = "ssh"
-  vpc_security_group_ids = [aws_security_group.http_access.id]
+  vpc_security_group_ids = [aws_security_group.https_access.id]
 
 connection {
   type        = "ssh"
@@ -20,9 +20,12 @@ provisioner "remote-exec"{
 
 }
 }
-resource "aws_security_group" "http_access" {
-  name = "http_access"
+output "publicip"{
+  value = aws_instance.terraformdemo.public_ip
+}
 
+resource "aws_security_group" "https_access" {
+  name = "https_access"
 
   ingress {
     from_port   = "22"
