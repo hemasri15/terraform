@@ -3,6 +3,7 @@ resource "aws_instance" "terraformdemo" {
   instance_type          = var.instance_type
   key_name               = "ssh"
   vpc_security_group_ids = [aws_security_group.https_access.id]
+  
 
 connection {
   type        = "ssh"

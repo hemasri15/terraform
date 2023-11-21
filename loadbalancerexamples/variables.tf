@@ -10,6 +10,5 @@ variable "instance_type" {
 }
 variable "alb_names" {
    type = string
-   default = "test”
+   default = "test"
 }
-
