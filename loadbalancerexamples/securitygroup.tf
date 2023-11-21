@@ -1,5 +1,5 @@
-resource "aws_security_group" "https_access" {
-  name = "https_access"
+resource "aws_security_group" "http_access" {
+  name = var.security_grp
 
   ingress {
     from_port   = "22"

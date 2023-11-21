@@ -12,3 +12,8 @@ variable "alb_names" {
    type = string
    default = "test"
 }
+
+variable "security_grp"{
+  type = string
+  default = "http_access"
+}
