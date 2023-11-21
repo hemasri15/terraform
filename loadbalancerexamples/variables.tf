@@ -11,15 +11,16 @@ variable "instance_type" {
 variable "alb_names" {
    type = string
    default = "test”
+
 }
 variable "health_check" {
    type = string
-   default = {
+   default = "{
       "timeout"  = "10"
       "interval" = "20"
       "path"     = "/"
       "port"     = "80"
       "unhealthy_threshold" = "2"
       "healthy_threshold" = "3"
-    }
+    }"
 }

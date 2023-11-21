@@ -3,7 +3,7 @@ resource "aws_lb_target_group" "sample_tg" {
    target_type        = "instance"
    port               = 80
    protocol           = "HTTP"
-   vpc_id             = "vpc-70XXXXb"
+   
    health_check {
       healthy_threshold   = var.health_check["healthy_threshold"]
       interval            = var.health_check["interval"]
