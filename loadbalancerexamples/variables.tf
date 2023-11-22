@@ -17,3 +17,7 @@ variable "security_grp"{
   type = string
   default = "http_access"
 }
+variable "key_name"{
+  type = string
+  description = "enter key name"
+}

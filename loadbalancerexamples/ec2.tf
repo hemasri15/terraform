@@ -1,7 +1,7 @@
 resource "aws_instance" "terraformdemo" {
   ami                    = var.ami_id
   instance_type          = var.instance_type
-  key_name               = "ssh"
+  key_name               = var.key_name
   vpc_security_group_ids = [aws_security_group.http_access.id]
 
 
@@ -16,7 +16,4 @@ provisioner "remote-exec"{
 
 
 }
-}
-output "publicip"{
-  value = aws_instance.terraformdemo.public_ip
 }
